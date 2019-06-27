@@ -8,7 +8,7 @@
         axios.get('https://www.googleapis.com/books/v1/volumes', {
             params: {
                 q: search, 
-                key: 'AIzaSyAbw8YwNKbqloMFsVKAZ7SOgdK-1trMTxE'
+                key: ''
             }
         })
         .then(function(response) {
