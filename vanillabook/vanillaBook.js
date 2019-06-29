@@ -8,20 +8,23 @@
         axios.get('https://www.googleapis.com/books/v1/volumes', {
             params: {
                 q: search, 
-                key: 'AIzaSyAbw8YwNKbqloMFsVKAZ7SOgdK-1trMTxE'
+                key: ''
             }
         })
         .then(function(response) {
+            bookInfo.length = 0
+            console.log(bookInfo)
             bookInfo = response.data.items
+            getData()
+            console.log(bookInfo)
         })
-        .then(getData)
         .catch(function(error) {
             console.log(error)
         })
     }
 
     const getData = () => {
-        bookInfo.forEach((item, index) => {
+        bookInfo.forEach(item => {
             let bookCover = item.volumeInfo.imageLinks.thumbnail
             let title = item.volumeInfo.title
             let subTitle = item.volumeInfo.subtitle
@@ -38,7 +41,7 @@
                         <li class="book-title"> ${title} </li>
                         <li class="book-author"> ${author} </li>
                         <li class="book-publichedDate"> ${publishedDate} </li>
-                        <li class="book-pageCount"> ${pageCount} </li>
+                        <li class="book-pageCount"> ${pageCount} 페이지</li>
                     </div>
                 </div>`
             bookContainer.insertAdjacentHTML('beforeend', template)
