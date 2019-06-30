@@ -1,16 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import Hello from './hello'
+import Book from './Book';
 
 function App() {
-  return (
-    <div> 
-      <Hello />
-      <Hello />
-      <Hello />
-      <Hello />
-    </div>
-  );
-}
+    return (
+        <Book></Book>
+        );
+    }
 
 export default App;
